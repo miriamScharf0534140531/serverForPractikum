@@ -1,0 +1,10 @@
+# Visual Studio Code 
+.vscode/ 
+ 
+# Visual Studio files 
+*.suo 
+*.user 
+*.sln 
+*.vcxproj 
+*.vcxproj.filters 
+*.csproj 

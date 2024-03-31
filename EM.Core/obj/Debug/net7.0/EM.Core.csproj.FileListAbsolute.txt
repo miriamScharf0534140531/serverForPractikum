@@ -1,0 +1,14 @@
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\bin\Debug\net7.0\EM.Core.deps.json
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\bin\Debug\net7.0\EM.Core.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\bin\Debug\net7.0\EM.Core.pdb
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.csproj.AssemblyReference.cache
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.AssemblyInfoInputs.cache
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.AssemblyInfo.cs
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.csproj.CoreCompileInputs.cache
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\refint\EM.Core.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.pdb
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\ref\EM.Core.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\bin\Debug\net7.0\EM.Core.runtimeconfig.json
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Core\obj\Debug\net7.0\EM.Core.genruntimeconfig.cache

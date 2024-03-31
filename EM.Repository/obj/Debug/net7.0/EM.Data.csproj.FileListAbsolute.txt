@@ -1,0 +1,15 @@
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\bin\Debug\net7.0\EM.Data.deps.json
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\bin\Debug\net7.0\EM.Data.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\bin\Debug\net7.0\EM.Data.pdb
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\bin\Debug\net7.0\EM.Core.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\bin\Debug\net7.0\EM.Core.pdb
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.csproj.AssemblyReference.cache
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.AssemblyInfoInputs.cache
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.AssemblyInfo.cs
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.csproj.CoreCompileInputs.cache
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.csproj.CopyComplete
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\refint\EM.Data.dll
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\EM.Data.pdb
+C:\Users\תכנות\Desktop\iri\תכנות\פרקטיקום\EmployeesManagment\EM.Repository\obj\Debug\net7.0\ref\EM.Data.dll
