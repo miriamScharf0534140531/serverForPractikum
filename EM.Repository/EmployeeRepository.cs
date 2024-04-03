@@ -56,17 +56,15 @@ namespace EM.Data
 
         public async Task<bool> Update(int id, Employee employee)
         {
-            Employee e = await _context.Employees.FirstOrDefaultAsync(e => e.Id == id);
-            e.StartDate = employee.StartDate;
-            e.TZ = e.TZ;
-            e.FirstName = employee.FirstName;
-            e.LastName = employee.LastName;
-            Employee ec=await _context.Employees.FirstOrDefaultAsync(e => e.Id==id);
-            ec.BirthDate = employee.BirthDate;
-            ec.Male=employee.Male;
-            //לשנות את התפקידים
-            //var roles = employee.EmployeeCharacteristics.Roles;
-
+            var existingEmployee = await _context.Employees.Include(e => e.Roles).FirstOrDefaultAsync(e => e.Id == id);
+            existingEmployee.FirstName = employee.FirstName;
+            existingEmployee.LastName = employee.LastName;
+            existingEmployee.TZ = employee.TZ;
+            existingEmployee.StartDate = employee.StartDate;
+            existingEmployee.Active = employee.Active;
+            existingEmployee.BirthDate = employee.BirthDate;
+            existingEmployee.Male = employee.Male;
+            existingEmployee.Roles = employee.Roles;
             await _context.SaveChangesAsync();
             return true;
         }

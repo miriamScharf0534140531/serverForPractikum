@@ -11,6 +11,6 @@ namespace EM.Core.interfaces
     {
         public Task<string> GetById(int id);
         public Task<bool> IsExistId(int id);
-        public Task<List<EmployeeRole>> GetEmployeeRoles();
+        public Task<List<Role>> GetRoles();
     }
 }

@@ -25,9 +25,10 @@ namespace EM.Data
             var x= await _context.Roles.FirstAsync(x=>x.Id==id);
             return x.Name;
         }
-        public async Task<List<EmployeeRole>> GetEmployeeRoles()
+        public async Task<List<Role>> GetRoles()
         {
-            return await _context.EmployeeRoles.ToListAsync();
+            return  _context.Roles.ToList();
         }
+
     }
 }

@@ -15,20 +15,23 @@ namespace EM.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(EmployeeDTO employee)
+        public async Task<IActionResult> Post(EmployeeDTO employee)
         {
             bool res = await _employeeService.Add(employee);
             return res ? Ok("ok") : BadRequest();
         }
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] EmployeeDTO employee)
+        public async Task<IActionResult> Put(int id, [FromBody] EmployeeDTO employee)
         {
             //return Ok(_employeeService.Update(id, employee));
+            Console.WriteLine(employee.TZ);
+            Console.WriteLine(employee.FirstName);
+            Console.WriteLine(employee.LastName);
             bool res = await _employeeService.Update(id, employee);
-            return res ? Ok("ok") : BadRequest();
+            return res ? Ok("ok") : BadRequest("invalid employee");
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var x = await _employeeService.Delete(id);
             if (x == true)
@@ -40,7 +43,7 @@ namespace EM.API.Controllers
             return Ok(_employeeService.GetAll());
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult>GetById(int id)
+        public async Task<IActionResult>GetById(int id)
         {
             var x=await _employeeService.GetById(id);
             return x==null?NotFound("Employee not found"):Ok(x);

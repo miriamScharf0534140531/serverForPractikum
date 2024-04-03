@@ -27,13 +27,19 @@ namespace EM.Service
         {
             var em = _mapper.Map<Employee>(employee);
             em.Active= true;
-            foreach (var e in em.Roles) {
-                if(!_roleRepository.IsExistId(e.RoleId).Result||em.Roles.Count(r=>r.Id==e.Id)>1)
-                    return false;
-            }        
+       if(!IsValidEmployee(em))
+                return false;
             return await _employeeRepository.Add(em);
         }
-
+        private bool IsValidEmployee(Employee employee)
+        {
+            foreach (var e in employee.Roles)
+            {
+                if (!_roleRepository.IsExistId(e.RoleId).Result || employee.Roles.Count(r => r.Id == e.Id) > 1||e.JobStartDate.CompareTo(employee.StartDate)<0)
+                    return false;
+            }
+            return true;
+        }
         public async Task<bool> Delete(int id)
         {
             return await _employeeRepository.Delete(id);
@@ -64,11 +70,8 @@ namespace EM.Service
         {
             var em = _mapper.Map<Employee>(employee);
             em.Active = true;
-            foreach (var e in em.Roles)
-            {
-                if (!_roleRepository.IsExistId(e.RoleId).Result)
-                    return false;
-            }
+           if(!IsValidEmployee(em))
+                return false;
             return _employeeRepository.Update(id, em).Result;
         }
     }

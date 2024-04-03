@@ -17,6 +17,7 @@ namespace EM.Core.DTO
         public string LastName { get; set; }
         [MinLength(9)]
         [MaxLength(9)]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "The TZ must contain only digits.")]
         public string TZ { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime BirthDate { get; set; }
