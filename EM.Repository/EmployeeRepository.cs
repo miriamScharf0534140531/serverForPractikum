@@ -64,6 +64,7 @@ namespace EM.Data
             existingEmployee.Active = employee.Active;
             existingEmployee.BirthDate = employee.BirthDate;
             existingEmployee.Male = employee.Male;
+            existingEmployee.Email = employee.Email;
             existingEmployee.Roles = employee.Roles;
             await _context.SaveChangesAsync();
             return true;

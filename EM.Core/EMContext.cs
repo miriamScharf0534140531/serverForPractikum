@@ -1,7 +1,9 @@
 ﻿using EM.Core.models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Reflection.Metadata;
@@ -15,6 +17,19 @@ namespace EM.Core
 
         public EMContext(DbContextOptions<EMContext> options) : base(options)
         {
+        }
+        protected override void ConfigureConventions(ModelConfigurationBuilder builder)
+        {
+            builder.Properties<DateOnly>()
+                    .HaveConversion<DateOnlyConverter>()
+                    .HaveColumnType("date");
+        }
+        public class DateOnlyConverter : ValueConverter<DateOnly, DateTime>
+        {
+            public DateOnlyConverter() : base(
+                d => d.ToDateTime(TimeOnly.MinValue),
+                d => DateOnly.FromDateTime(d))
+            { }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

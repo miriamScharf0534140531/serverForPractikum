@@ -31,6 +31,7 @@ namespace EM.Core
 
             CreateMap<EmployeeDTO, Employee>().ForMember(x => x.Active, y => y.Ignore()).ReverseMap();
 
+            CreateMap<EmployeeRoleDTO,EmployeeRole>().ReverseMap();
 
 
         }

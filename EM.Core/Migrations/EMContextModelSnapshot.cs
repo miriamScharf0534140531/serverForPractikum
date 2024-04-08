@@ -34,7 +34,11 @@ namespace EM.Core.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -50,7 +54,7 @@ namespace EM.Core.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("TZ")
                         .IsRequired()
@@ -74,7 +78,7 @@ namespace EM.Core.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("JobStartDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<bool>("Managerial")
                         .HasColumnType("bit");

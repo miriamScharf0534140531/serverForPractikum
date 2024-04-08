@@ -26,6 +26,7 @@ namespace EM.Service
         public async Task<bool> Add(EmployeeDTO employee)
         {
             var em = _mapper.Map<Employee>(employee);
+            _mapper.Map<List<EmployeeRole>>(em.Roles);
             em.Active= true;
        if(!IsValidEmployee(em))
                 return false;
@@ -52,6 +53,7 @@ namespace EM.Service
            // var roles=_roleRepository.GetEmployeeRoles();
            // r.ForEach(e=>e.EmployeeCharacteristics.Roles=roles.Result.FindAll(x=>x.EmployeeCharacteristicsId==e.Id));
             var eDTO = _mapper.Map<EmployeeDTO[]>(r).ToList();
+            eDTO.ForEach(x => _mapper.Map<EmployeeRoleDTO[]>(x.Roles).ToList());
             return eDTO;
         }
 
@@ -69,6 +71,7 @@ namespace EM.Service
         public async Task<bool> Update(int id, EmployeeDTO employee)
         {
             var em = _mapper.Map<Employee>(employee);
+            _mapper.Map<List<EmployeeRole>>(em.Roles);
             em.Active = true;
            if(!IsValidEmployee(em))
                 return false;

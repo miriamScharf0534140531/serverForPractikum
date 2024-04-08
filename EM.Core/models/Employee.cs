@@ -23,11 +23,12 @@ namespace EM.Core.models
         [MinLength(9)]
         [MaxLength(9)]
         public string? TZ { get; set; }
-        public DateTime StartDate { get; set; }
-        ///
+        public DateOnly StartDate { get; set; }
         public bool Active { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateOnly BirthDate { get; set; }
         public bool Male { get; set; }
+        [RegularExpression(@"^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$")]
+        public string Email { get; set; }
         public List<EmployeeRole> Roles { get; set; }
     
     }
