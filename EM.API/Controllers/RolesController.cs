@@ -16,7 +16,7 @@ namespace EM.API.Controllers
             _roleService = roleService;
         }
         [HttpGet]
-        public ActionResult<EmployeeDTO> GetAllRoles()
+        public IActionResult GetAllRoles()
         {
             return Ok(_roleService.GetRoles());
         }

@@ -16,7 +16,7 @@ namespace EM.Core.interfaces
 
         Task<bool> Add(EmployeeDTO user);
 
-        Task<bool> Update(int id, EmployeeDTO user);
+        Task<EmployeeDTO> Update(int id, EmployeeDTO user);
 
         Task<bool> Delete(int id);
     }

@@ -16,7 +16,6 @@ namespace EM.Core.models
         [Key]
         public int Id { get; set; }
         public int RoleId { get; set; }
-        //public Role? Role { get; set; }
         public bool Managerial { get; set; }
         public DateOnly JobStartDate { get; set; }
         [ForeignKey(nameof(EmployeeId))]

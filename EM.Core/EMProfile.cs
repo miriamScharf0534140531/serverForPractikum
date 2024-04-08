@@ -13,25 +13,10 @@ namespace EM.Core
     {
         public EMProfile()
         {
-            //CreateMap<EmployeeDTO, Employee>();
-            //.ForMember(dest => dest.EmployeeCharacteristics, opt => opt.MapFrom(src => new EmployeeCharacteristics
-            //{
-            //    BirthDate = src.BirthDate,
-            //    Male = src.Male,
-            //Roles = src.Roles.Select(role => new EmployeeRole
-            //{
-            //    RoleId = role.RoleId,
-            //    Managerial = role.Managerial,
-            //    JobStartDate = role.JobStartDate,
-            //    EmployeeCharacteristicsId = role.EmployeeCharacteristicsId,
-            //    EmployeeCharacteristics = role.EmployeeCharacteristics
-            //}).ToList()
-            //}))
-            //.ReverseMap();
 
             CreateMap<EmployeeDTO, Employee>().ForMember(x => x.Active, y => y.Ignore()).ReverseMap();
 
-            CreateMap<EmployeeRoleDTO,EmployeeRole>().ReverseMap();
+            CreateMap<EmployeeRoleDTO, EmployeeRole>().ReverseMap();
 
 
         }

@@ -18,7 +18,7 @@ namespace EM.Service
         }
         public Task<string> GetById(int id)
         {
-            if(_roleRepository.IsExistId(id).Result)
+            if (_roleRepository.IsExistId(id).Result)
                 return _roleRepository.GetById(id);
             return null;
         }

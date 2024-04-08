@@ -10,13 +10,13 @@ namespace EM.Core.interfaces
 {
     public interface IEmployeeRepository
     {
-        List <Employee> GetAll();
+        List<Employee> GetAll();
 
         Task<Employee> GetById(int id);
 
         Task<bool> Add(Employee user);
 
-        Task<bool> Update(int id, Employee user);
+        Task<Employee> Update(int id, Employee user);
 
         Task<bool> Delete(int id);
         Task<bool> IsExist(int id);

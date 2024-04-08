@@ -18,17 +18,13 @@ namespace EM.API.Controllers
         public async Task<IActionResult> Post(EmployeeDTO employee)
         {
             bool res = await _employeeService.Add(employee);
-            return res ? Ok("ok") : BadRequest();
+            return res ? Ok() : BadRequest();
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] EmployeeDTO employee)
         {
-            //return Ok(_employeeService.Update(id, employee));
-            Console.WriteLine(employee.TZ);
-            Console.WriteLine(employee.FirstName);
-            Console.WriteLine(employee.LastName);
-            bool res = await _employeeService.Update(id, employee);
-            return res ? Ok("ok") : BadRequest("invalid employee");
+            var res = await _employeeService.Update(id, employee);
+            return res!=null ? Ok(employee) : BadRequest("invalid employee");
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
@@ -39,7 +35,7 @@ namespace EM.API.Controllers
             return NotFound("Employee not found");
         }
         [HttpGet]
-        public ActionResult<EmployeeDTO> GetAll() { 
+        public IActionResult GetAll() { 
             return Ok(_employeeService.GetAll());
         }
         [HttpGet("{id}")]

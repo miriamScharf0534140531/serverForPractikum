@@ -15,7 +15,7 @@ namespace EM.Service
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IRoleRepository _roleRepository;
         readonly IMapper _mapper;
-        public EmployeeService(IEmployeeRepository employeeRepository,IRoleRepository roleRepository,IMapper mapper)
+        public EmployeeService(IEmployeeRepository employeeRepository, IRoleRepository roleRepository, IMapper mapper)
         {
 
             _employeeRepository = employeeRepository;
@@ -27,8 +27,8 @@ namespace EM.Service
         {
             var em = _mapper.Map<Employee>(employee);
             _mapper.Map<List<EmployeeRole>>(em.Roles);
-            em.Active= true;
-       if(!IsValidEmployee(em))
+            em.Active = true;
+            if (!IsValidEmployee(em))
                 return false;
             return await _employeeRepository.Add(em);
         }
@@ -36,7 +36,7 @@ namespace EM.Service
         {
             foreach (var e in employee.Roles)
             {
-                if (!_roleRepository.IsExistId(e.RoleId).Result || employee.Roles.Count(r => r.Id == e.Id) > 1||e.JobStartDate.CompareTo(employee.StartDate)<0)
+                if (!_roleRepository.IsExistId(e.RoleId).Result || employee.Roles.Count(r => r.RoleId == e.RoleId) > 1 || e.JobStartDate.CompareTo(employee.StartDate) < 0)
                     return false;
             }
             return true;
@@ -46,12 +46,10 @@ namespace EM.Service
             return await _employeeRepository.Delete(id);
         }
 
-        public  List<EmployeeDTO> GetAll()
+        public List<EmployeeDTO> GetAll()
         {
 
-            var r=  _employeeRepository.GetAll().FindAll(x=>x.Active);
-           // var roles=_roleRepository.GetEmployeeRoles();
-           // r.ForEach(e=>e.EmployeeCharacteristics.Roles=roles.Result.FindAll(x=>x.EmployeeCharacteristicsId==e.Id));
+            var r = _employeeRepository.GetAll().FindAll(x => x.Active);
             var eDTO = _mapper.Map<EmployeeDTO[]>(r).ToList();
             eDTO.ForEach(x => _mapper.Map<EmployeeRoleDTO[]>(x.Roles).ToList());
             return eDTO;
@@ -61,21 +59,24 @@ namespace EM.Service
         {
             if (_employeeRepository.IsExist(id).Result)
             {
-                var em =await _employeeRepository.GetById(id);
+                var em = await _employeeRepository.GetById(id);
                 EmployeeDTO emDTO = _mapper.Map<EmployeeDTO>(em);
                 return emDTO;
             }
             else return null;
         }
 
-        public async Task<bool> Update(int id, EmployeeDTO employee)
+        public async Task<EmployeeDTO> Update(int id, EmployeeDTO employee)
         {
             var em = _mapper.Map<Employee>(employee);
             _mapper.Map<List<EmployeeRole>>(em.Roles);
             em.Active = true;
-           if(!IsValidEmployee(em))
-                return false;
-            return _employeeRepository.Update(id, em).Result;
+            if (!IsValidEmployee(em))
+                return null;
+            var obj = _employeeRepository.Update(id, em).Result;
+            EmployeeDTO e = _mapper.Map<EmployeeDTO>(obj);
+            e.Roles = _mapper.Map<List<EmployeeRoleDTO>>(obj.Roles);
+            return e;
         }
     }
 }

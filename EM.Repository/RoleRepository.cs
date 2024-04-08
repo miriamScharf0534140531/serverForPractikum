@@ -21,13 +21,14 @@ namespace EM.Data
         {
             return await _context.Roles.AnyAsync(role => role.Id == id);
         }
-        public async Task<string> GetById (int id){ 
-            var x= await _context.Roles.FirstAsync(x=>x.Id==id);
+        public async Task<string> GetById(int id)
+        {
+            var x = await _context.Roles.FirstAsync(x => x.Id == id);
             return x.Name;
         }
         public async Task<List<Role>> GetRoles()
         {
-            return  _context.Roles.ToList();
+            return _context.Roles.ToList();
         }
 
     }
